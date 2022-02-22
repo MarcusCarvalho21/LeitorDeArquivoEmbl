@@ -128,6 +128,12 @@ public class View {
 						case 0:
 							resultado.quantidadeCDS();
 							break;
+						case 1:
+							resultado.quantidadeProduto();
+							break;
+						case 2:
+							resultado.quantidadeProdutoComGene();
+							break;
 						case 3:
 							resultado.quantidadeTRNA();
 							break;

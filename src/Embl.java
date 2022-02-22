@@ -53,6 +53,84 @@ public class Embl {
 		
 	}
 	
+	public void quantidadeProduto() {
+		
+		BufferedReader leitura = null;
+		try {
+			FileReader arquivo = new FileReader(this.caminho);
+			leitura = new BufferedReader(arquivo);
+			String linha = "";
+			String segundaLinha = "";
+			
+			try {
+				
+				linha = leitura.readLine();
+	
+				while(linha!=null) {
+					if(linha.contains("/product")) {
+						segundaLinha = leitura.readLine();
+						if(!segundaLinha.contains("/gene")) {
+							this.produto = this.produto + 1d;
+						}
+					}
+
+					linha = leitura.readLine();
+				}
+				arquivo.close();
+			}catch(IOException ex) {
+				ex.printStackTrace();
+				System.exit(-1);
+			
+			}
+			
+		}catch(FileNotFoundException ex) {
+			ex.printStackTrace();
+			System.exit(-1);
+		}
+		
+		JOptionPane.showMessageDialog(null, "Quantidade de Produtos: " + this.produto);
+		
+	}
+	
+	public void quantidadeProdutoComGene() {
+		
+		BufferedReader leitura = null;
+		try {
+			FileReader arquivo = new FileReader(this.caminho);
+			leitura = new BufferedReader(arquivo);
+			String linha = "";
+			String segundaLinha = "";
+			
+			try {
+				
+				linha = leitura.readLine();
+	
+				while(linha!=null) {
+					if(linha.contains("/product")) {
+						segundaLinha = leitura.readLine();
+						if(segundaLinha.contains("/gene")) {
+							this.produtoComGene = this.produtoComGene + 1d;
+						}
+					}
+
+					linha = leitura.readLine();
+				}
+				arquivo.close();
+			}catch(IOException ex) {
+				ex.printStackTrace();
+				System.exit(-1);
+			
+			}
+			
+		}catch(FileNotFoundException ex) {
+			ex.printStackTrace();
+			System.exit(-1);
+		}
+		
+		JOptionPane.showMessageDialog(null, "Quantidade de Produtos com a sigla gene: " + this.produtoComGene);
+		
+	}
+	
 	public void quantidadeTRNA() {
 		
 		BufferedReader leitura = null;
