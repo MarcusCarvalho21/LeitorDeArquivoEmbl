@@ -1,6 +1,6 @@
-#Leitor sequência de DNA e proteina
+# Leitor sequência de DNA e proteina
 
-##Arquivo .EMBL
+## Arquivo .EMBL
 
 - O arquivo .embl é utilizado por programas de sequnciamento de DNA, pois contém dados de sequência, podendo armazenar diversos tipos da mesma.
 
